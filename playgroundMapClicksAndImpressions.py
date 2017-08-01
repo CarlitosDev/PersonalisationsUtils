@@ -65,3 +65,14 @@ for iVar, iType in df.dtypes.iteritems():
 for a,b in df.dtypes.iteritems():
     print(a)
     print(b)
+
+
+
+
+import os
+
+sqlRoot   = '/Users/carlos.aguilar/Documents/BeamlyRepos/PersonalisationsUtils/sql';
+fileName  = 'templateInsertCampaignData.sql'
+filePath  = os.path.join(sqlRoot, fileName)
+
+919044

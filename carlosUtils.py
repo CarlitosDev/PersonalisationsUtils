@@ -2,7 +2,8 @@ import pandas as pd
 import numpy as np
 import os
 import pickle
-import sys 
+import sys
+
 def getElementCounts(df, varName,  minPerc = 5):
 
     a = df[varName].value_counts();
@@ -55,7 +56,6 @@ def getObjClass(obj):
 def clearInt():
     os.system('clear')
 
-
 def str2File(thisStr, thisFile):
     f = open(thisFile, 'w')
     f.write(thisStr)
@@ -74,3 +74,8 @@ def getDFfromRegEx(df, varName, regExPattern, colNames):
     tempDF.columns = colNames;
 
     return tempDF;
+
+def readTextFile(filePath):
+    with open(filePath) as in_file:
+        textData = in_file.read()
+    return textData

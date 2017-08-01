@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Amazon Redshift - adform@adform-ops.c7dxcjhlundm.eu-central-1.redshift.amazonaws.com" uuid="13101c37-885d-4968-9b95-c6f9c594f382">
+      <database-info product="PostgreSQL" version="08.00.0002" jdbc-version="4.2" driver-name="RedshiftJDBC" driver-version="01.02.01.1001">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <secret-storage>master_key</secret-storage>
+      <user-name>carlos_aguilar</user-name>
+      <introspection-schemas>adform:public</introspection-schemas>
+    </data-source>
+  </component>
+</project>

@@ -20,9 +20,14 @@ Functionality to clean data and upload it to RedShift
 
 Requirements:
 -------
+* conda install -c https://conda.anaconda.org/anaconda pandas-datareader
 * pip install bokeh
-
-
+* pip install selenium
+* conda install phantomjs
+* conda install pandasql
+* pip install --upgrade --user awscli
+* conda install pandoc
+* conda install statsmodels
 
 Comments:
 -------

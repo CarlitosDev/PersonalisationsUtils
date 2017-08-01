@@ -10,12 +10,12 @@
 
 """
 
+import os
 
 import redshiftSqlAlchemy as rsa
 import pandas as pd
 import pandasql as pdsql
 import joinMetaDefinitions as jn
-import os
 import carlosUtils as cu
 import re
 import bokehUtils as bk
