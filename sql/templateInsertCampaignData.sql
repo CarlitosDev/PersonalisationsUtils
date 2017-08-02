@@ -111,3 +111,9 @@ left join adform.meta_mini_geo as tableCity
 
 
 where tbClicks.campaign_id in (919044)
+
+
+/*
+delete adform.impressionsClicksMapped
+where campaign_id in (886811)
+ */

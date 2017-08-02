@@ -6,50 +6,6 @@
 
 */
 
-CREATE TABLE adform.meta_campaigns_v2
-as
-(
-  SELECT DISTINCT
-  tableA.campaignsid as campaign_id,
-  tableA.campaignstatus as campaignstatus,
-  tableA.type,
-  tableB.year                  ,
-  tableB.quarter               ,
-  tableB.market                ,
-  tableA.startdate,
-  tableA.enddate,
-  tableA.clientid as client_id,
-  tableB.masterbrand           ,
-  tableA.label3 as brandBis,
-  tableB."brand+campaignevent" ,
-  tableB.bioniccampaignid      ,
-  tableB.agency                ,
-  tableB.clientname            ,
-  tableA.label1 as division,
-  tableB.campaignobjective     ,
-  tableA.campaignsname
-  -- meta campaigns is been generated with uploadMetasToRedShift.py
-  from adform.meta_campaigns as tableA
-  -- meta_ext_campaign (extendCampaignInformation.sql + playgroundGetCampaignFields.py)
-  inner join adform.meta_ext_campaign as tableB
-  on tableA.campaignsname = tableB.campaignsname
-)
-
-
-SELECT DISTINCT *
-FROM adform.meta_campaigns_v2
-where lower(agency) like 'beamly'
-
-
-update adform.meta_campaigns_v2
-set agency = 'Beamly'
-where lower(agency) like 'beamly'
-
-update adform.meta_campaigns_v2
-set agency = 'Zenith'
-where lower(agency) like 'zenith'
-
-------------------------------
 
 SELECT
 
@@ -393,3 +349,6 @@ where type = 'Display'
 SELECT count(*)
 from adform.meta_campaigns_v2 as tbClicks
 where campaign_id is null
+
+
+from adform.impressions

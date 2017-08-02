@@ -33,15 +33,40 @@ where campaignsid = 886811
 
 
 
+create table adform.ammendedNames
+AS (
+select DISTINCT
+campaignsid
+,replace(replace(campaignsname, '___', '_none_none_'), '__', '_none_') as betterName
+,-len(campaignsname) + len(replace(replace(campaignsname, '___', '_none_none_'), '__', '_none_')) as numChars
+from adform.meta_campaigns
+)
+
+delete adform.ammendedNames where numchars = 0
+
+
+
+select * from adform.ammendedNames
+where numchars <> 0
+
 
 select * from adform.meta_campaigns
-where campaignsid = 892510
+where campaignsid = 897248
 
 
+update sales
+set qtysold = stagesales.qtysold,
+pricepaid = stagesales.pricepaid
+from stagesales
+where sales.salesid = stagesales.salesid
+and sales.listid = stagesales.listid
+and stagesales.saletime > '2008-11-30'
+and (sales.qtysold != stagesales.qtysold
+or sales.pricepaid != stagesales.pricepaid);
 
 
-
-select * from adform.meta_campaigns
+create table adform.meta_campaigns_cp as
+(select * from adform.meta_campaigns)
 
 
 

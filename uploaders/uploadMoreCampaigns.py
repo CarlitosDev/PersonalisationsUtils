@@ -32,7 +32,7 @@ rs = rsa.RedshiftAlchemy(user=user, password=password,
 
 conn = rs.dbEngine.connect()
 
-listOfCampaigns = ['897248', '886811', '929026', '918140', \
+listOfCampaigns = ['886811', '929026', '918140', \
 '950281', '906824', '922742','912694', '894699', '894699', '875443']
 
 for currentCampaign in listOfCampaigns:

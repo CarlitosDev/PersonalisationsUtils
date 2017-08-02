@@ -7,7 +7,7 @@
       </database-info>
       <secret-storage>master_key</secret-storage>
       <user-name>carlos_aguilar</user-name>
-      <introspection-schemas>adform:public</introspection-schemas>
+      <introspection-schemas>adform:adform</introspection-schemas>
     </data-source>
   </component>
 </project>
